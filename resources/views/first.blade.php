@@ -22,9 +22,9 @@
         <div class="mb-3">
             <input type="text" name="name" class="form-control" placeholder="Your name" required>
         </div>
-        <!-- <div class="mb-3">
+        <div class="mb-3">
             <input type="email" name="email" class="form-control" placeholder="Your email" required>
-        </div> -->
+        </div>
         <div class="mb-3">
             <input type="password" name="code" class="form-control" placeholder="Password" required>
         </div>

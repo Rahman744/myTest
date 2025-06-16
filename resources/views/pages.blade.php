@@ -13,6 +13,7 @@
     </div>
 
     <h1 class="text-success mb-4">Hello {{$name}}! you are in page {{$id}}</h1>
+    <p>Email: {{ session('email') }}</p>
 
     <div class="d-flex align-items-center gap-3">
         @if($id > 1)

@@ -11,6 +11,7 @@ Route::get('/', function () {
 Route::post('/start', function (Request $request) {
     $name = $request->input('name');
     $code = $request->input('code');
+    $email = $request->input('email');
 
     if ($code !== '1234') {
         return redirect('/')
