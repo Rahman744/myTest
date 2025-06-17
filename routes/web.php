@@ -1,32 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
+use App\Http\Controllers\MyController;
 
-
-Route::get('/', function () {
-    return view('first');
-});
-
-Route::post('/start', function (Request $request) {
-    $name = $request->input('name');
-    $code = $request->input('code');
-    $email = $request->input('email');
-
-    if ($code !== '1234') {
-        return redirect('/')
-            ->with('error', 'Wrong code!')
-            ->withInput();
-    }
-
-    session(['name' => $name]);
-    session(['access_granted' => true]);
-    return redirect('/1');
-});
-
-
-Route::get('/{id}', function ($id) {
-    $name = session('name');
-    return view('pages', compact('id', 'name'));
-});
-
+Route::get('/', [MyController::class, 'home_page']);
+Route::post('/start', [MyController::class, 'form']);
+Route::get('/{id}', [MyController::class, 'pages']);
